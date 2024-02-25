@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DependencyInjectionStart">
         <activity
-            android:name="com.example.dependencyinjectionstart.example2.presentation.MainActivity"
+            android:name="ru.com.bulat.dependencyinjectionstart.example2.presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
