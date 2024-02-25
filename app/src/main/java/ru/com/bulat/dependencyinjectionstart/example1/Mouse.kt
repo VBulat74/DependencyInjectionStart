@@ -1,4 +1,6 @@
 package ru.com.bulat.dependencyinjectionstart.example1
 
-class Mouse {
+import javax.inject.Inject
+
+class Mouse @Inject constructor() {
 }
