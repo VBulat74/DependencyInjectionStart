@@ -5,20 +5,17 @@ import dagger.BindsInstance
 import dagger.Component
 import ru.com.bulat.dependencyinjectionstart.example2.presentation.MainActivity
 
-@Component (modules = [DataModule::class, DomainModule::class])
+@Component(modules = [DataModule::class, DomainModule::class])
 interface AppComponent {
 
-    fun inject (activity : MainActivity)
+    fun inject(activity : MainActivity)
 
-    @Component.Builder
-    interface AppComponentBuilder {
+    @Component.Factory
+    interface AppComponentFactory {
 
-        @BindsInstance
-        fun context(context : Context) : AppComponentBuilder
-
-        @BindsInstance
-        fun timeMillis(timeMillis: Long) : AppComponentBuilder
-
-        fun build() : AppComponent
+        fun create(
+            @BindsInstance context : Context,
+            @BindsInstance timeMillis : Long,
+        ) : AppComponent
     }
 }

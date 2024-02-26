@@ -9,13 +9,9 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
 
     private val component by lazy {
-        DaggerAppComponent.builder()
-            .context(this)
-            .timeMillis(System.currentTimeMillis())
-            .build()
+        DaggerAppComponent.factory()
+            .create(this, System.currentTimeMillis())
     }
-
-
 
     @Inject
     lateinit var viewModel : ExampleViewModel
