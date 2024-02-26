@@ -9,5 +9,5 @@ import ru.com.bulat.dependencyinjectionstart.example2.domain.ExampleRepository
 interface DomainModule {
 
     @Binds
-    fun bindsRepository(impl: ExampleRepositoryImpl) : ExampleRepository
+    fun bindsRepository(impl : ExampleRepositoryImpl) : ExampleRepository
 }
