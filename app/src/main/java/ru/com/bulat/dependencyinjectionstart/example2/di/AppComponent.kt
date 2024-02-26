@@ -6,7 +6,7 @@ import dagger.Component
 import ru.com.bulat.dependencyinjectionstart.example2.presentation.MainActivity
 
 @AppScope
-@Component(modules = [DataModule::class, DomainModule::class])
+@Component(modules = [DataModule::class, DomainModule::class, ViewModelModule::class])
 interface AppComponent {
 
     fun inject(activity : MainActivity)
