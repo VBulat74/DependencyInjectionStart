@@ -4,18 +4,19 @@ import android.content.Context
 import android.util.Log
 import com.example.dependencyinjectionstart.R
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
 class ExampleDatabase @Inject constructor(
-    private val context : Context,
-    private val timeMillis : Long,
+    private val context: Context,
+    private val timeMillis: Long,
 
 
-) {
+    ) {
 
     fun method() {
-        Log.d(LOG_TAG, "ExampleDatabase ${context.getString(R.string.app_name)} ($timeMillis ms) $this")
+        Log.d(
+            LOG_TAG,
+            "ExampleDatabase ${context.getString(R.string.app_name)} ($timeMillis ms) $this"
+        )
     }
 
     companion object {

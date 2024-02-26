@@ -10,9 +10,11 @@ import ru.com.bulat.dependencyinjectionstart.example2.data.datasource.ExampleRem
 @Module
 interface DataModule {
 
+    @AppScope
     @Binds
     fun bindsLocalDataSource(impl : ExampleLocalDataSourceImpl) : ExampleLocalDataSource
 
+    @AppScope
     @Binds
     fun bindRemoteDataSource(impl : ExampleRemoteDataSourceImpl) : ExampleRemoteDataSource
 }

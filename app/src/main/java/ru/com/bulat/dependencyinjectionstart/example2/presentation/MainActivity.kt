@@ -3,14 +3,13 @@ package ru.com.bulat.dependencyinjectionstart.example2.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dependencyinjectionstart.R
-import ru.com.bulat.dependencyinjectionstart.example2.di.DaggerAppComponent
+import ru.com.bulat.dependencyinjectionstart.example2.ExampleApp
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
     private val component by lazy {
-        DaggerAppComponent.factory()
-            .create(this, System.currentTimeMillis())
+        (application as ExampleApp).component
     }
 
     @Inject
