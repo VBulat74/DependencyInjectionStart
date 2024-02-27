@@ -3,12 +3,13 @@ package ru.com.bulat.dependencyinjectionstart.example2.data.repository
 import ru.com.bulat.dependencyinjectionstart.example2.data.datasource.ExampleLocalDataSource
 import ru.com.bulat.dependencyinjectionstart.example2.data.datasource.ExampleRemoteDataSource
 import ru.com.bulat.dependencyinjectionstart.example2.data.mapper.ExampleMapper
+import ru.com.bulat.dependencyinjectionstart.example2.di.ProdQualifier
 import ru.com.bulat.dependencyinjectionstart.example2.domain.ExampleRepository
 import javax.inject.Inject
 
 class ExampleRepositoryImpl @Inject constructor(
     private val localDataSource: ExampleLocalDataSource,
-    private val remoteDataSource: ExampleRemoteDataSource,
+    @ProdQualifier val remoteDataSource: ExampleRemoteDataSource,
     private val mapper: ExampleMapper
 ) : ExampleRepository {
 

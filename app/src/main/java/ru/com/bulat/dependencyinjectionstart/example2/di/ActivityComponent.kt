@@ -2,6 +2,8 @@ package ru.com.bulat.dependencyinjectionstart.example2.di
 
 import dagger.BindsInstance
 import dagger.Subcomponent
+import ru.com.bulat.dependencyinjectionstart.example2.domain.IdQualifier
+import ru.com.bulat.dependencyinjectionstart.example2.domain.NameQualifier
 import ru.com.bulat.dependencyinjectionstart.example2.presentation.MainActivity
 import ru.com.bulat.dependencyinjectionstart.example2.presentation.MainActivity2
 
@@ -17,7 +19,8 @@ interface ActivityComponent {
     interface Factory {
 
         fun create(
-            @BindsInstance id: String,
+            @BindsInstance @IdQualifier id: String,
+            @BindsInstance @NameQualifier name: String,
         ) :ActivityComponent
     }
 }

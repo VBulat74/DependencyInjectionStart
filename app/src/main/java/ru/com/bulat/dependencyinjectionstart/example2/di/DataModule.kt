@@ -6,6 +6,7 @@ import ru.com.bulat.dependencyinjectionstart.example2.data.datasource.ExampleLoc
 import ru.com.bulat.dependencyinjectionstart.example2.data.datasource.ExampleLocalDataSourceImpl
 import ru.com.bulat.dependencyinjectionstart.example2.data.datasource.ExampleRemoteDataSource
 import ru.com.bulat.dependencyinjectionstart.example2.data.datasource.ExampleRemoteDataSourceImpl
+import ru.com.bulat.dependencyinjectionstart.example2.data.datasource.TestRemoteDataSourceImpl
 
 @Module
 interface DataModule {
@@ -14,7 +15,13 @@ interface DataModule {
     @Binds
     fun bindsLocalDataSource(impl : ExampleLocalDataSourceImpl) : ExampleLocalDataSource
 
+    @ProdQualifier
     @AppScope
     @Binds
     fun bindRemoteDataSource(impl : ExampleRemoteDataSourceImpl) : ExampleRemoteDataSource
+
+    @TestQualifier
+    @AppScope
+    @Binds
+    fun bindTestRemoteDataSource(impl : TestRemoteDataSourceImpl) : ExampleRemoteDataSource
 }

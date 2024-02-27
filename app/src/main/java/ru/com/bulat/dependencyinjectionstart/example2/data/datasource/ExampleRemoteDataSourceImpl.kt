@@ -1,5 +1,6 @@
 package ru.com.bulat.dependencyinjectionstart.example2.data.datasource
 
+import android.util.Log
 import ru.com.bulat.dependencyinjectionstart.example2.data.network.ExampleApiService
 import javax.inject.Inject
 
@@ -9,5 +10,6 @@ class ExampleRemoteDataSourceImpl @Inject constructor(
 
     override fun method() {
         apiService.method()
+        Log.d("TestRemoteDataSource", "ProdRemoteDataSourceImpl")
     }
 }
