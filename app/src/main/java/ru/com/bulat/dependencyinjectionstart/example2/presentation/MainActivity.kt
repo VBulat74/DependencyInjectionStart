@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
 
     private val component by lazy {
         (application as ExampleApp).component
+            .activityComponentFactory()
+            .create("MY_ID")
     }
 
     private val viewModel by lazy {
